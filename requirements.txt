@@ -1,3 +1,0 @@
-pyautogui
-requests
-py7zr
