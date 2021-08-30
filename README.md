@@ -4,7 +4,7 @@
 
 ## Download
 
-- Channel
+- Channel:Pre
 
 |           | Stable | Beta        | Pre           |
 | --------- | ------ | ----------- | ------------- |
