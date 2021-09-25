@@ -2,6 +2,13 @@ import py7zr
 import requests
 import hashlib
 import os
+def update(upv):
+    up1 = requests.get('https://github.com/WU-PIN-JUI/py-Chat-cleaner/releases/download/v' + str(upv) + '/v' + str(upv) + '.7z')
+    up1.raise_for_status()
+    up2 = open('update.7z', 'wb')
+    for chunk in up1.iter_content(100000000):
+        up2.write(chunk)
+    up2.close()
 channelt = open('channel', 'r').read()
 open('channel', 'r').close()
 channellist = str(channelt).splitlines()
@@ -17,6 +24,7 @@ if vt.status_code == requests.codes.ok:
     os.remove('v')
     open('v', 'w').write(v)
     open('v', 'w').close()
+    update(v)
 else:
     print('Update error (can\'t get version file)')
     exit()
